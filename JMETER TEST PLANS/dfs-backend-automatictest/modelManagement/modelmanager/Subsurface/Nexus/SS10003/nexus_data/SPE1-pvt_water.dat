@@ -1,0 +1,5 @@
+DENW 62.2 	! lb/ft3 	! Density of the stock tank water
+CW 3.e-6 	! 1/PSIA 	! Water compressibility
+VISW 0.31 	! cp 	! Water viscosity
+BW 1.0265 	! rb/stb 	! Water formation volume factor at initial datum reservoir pressure
+PREF 4800 	! PSIA 	! Ref. pressure for water compressibility

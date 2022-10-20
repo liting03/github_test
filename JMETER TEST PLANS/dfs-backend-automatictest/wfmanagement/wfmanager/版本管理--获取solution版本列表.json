@@ -1,0 +1,1 @@
+[{"compareType":"Like","fieldName":"commitName","value":"Test"},{"compareType":"GT","fieldName":"commitTime","value":"1584086345343"}]

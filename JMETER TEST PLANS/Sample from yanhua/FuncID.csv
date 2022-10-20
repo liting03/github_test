@@ -1,0 +1,12 @@
+dsms.PVT.Calc
+dsms.PVT.CalcPseudoPress
+dsms.PVT.CalcPb
+dsms.IPR.CalcGasRate
+dsms.IPR.CalcGasPwf
+dsms.IPR.CalcGasCoeff
+dsms.IPR.MatchGasCoeff
+dsms.IPR.CalcOilRate
+dsms.IPR.CalcOilPwf
+dsms.IPR.CalcOilCoeff
+dsms.IPR.MatchOilCoeff
+dsms.IPR.CalcSkinFactor

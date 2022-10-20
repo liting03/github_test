@@ -1,0 +1,7 @@
+PINIT 4800 	! Initial reservoir pressure at the specified depth
+DINIT 8400 	! Datum depth
+WOC 8450 	! Depth of the water-oil contact
+PCWOC 0 	! Water-oil capillary pressure at water-oil contact
+GOC 8320 	! Depth of the gas-oil contact
+PCGOC 0 	! Gas-oil capillary pressure at gas-oil contact
+PSAT 4014.7 	! Initial saturation pressure at given depth

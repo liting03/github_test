@@ -1,0 +1,83 @@
+START 01/01/1980
+
+!     Timestep controls
+DT AUTO 1.
+   MIN 1.
+   MAX 30.
+!     The following keywords are translated from the original VIP data but are not yet implemented in Nexus
+!     DPLIM 500.
+!     DSLIM 0.15
+!     DSGLIM 0.15
+!     DZLIM 0.15
+
+!     Following VIP control card not translated: Outer iterations controls
+!     ITNLIM 1 5 500. 0.15 0.15 0.15
+
+!     Following VIP control card not translated: Tolerance on residuals
+!     TOLR 0.01 0.001
+!     Current optimized default for facilities
+SOLVER FACILITIES EXTENDED
+GRIDSOLVER IMPLICIT_COUPLING NONE
+
+!     Use vip units for output to vdb
+VIPUNITS
+
+!     Arrays written to map file
+MAPOUT
+P
+SAT OIL GAS WATER
+ENDMAPOUT
+
+!     Arrays to be printed out
+ARRAYOUT
+P
+SAT GAS WATER
+ENDARRAYOUT
+
+!     Frequency at which output is written
+OUTPUT WELLS TIMES
+       PERFS TIMES
+       RFT TIMES
+       WELLPLOT TIMES
+       FIELDPLOT TIMES
+       REGIONPLOT TIMES
+       MAPS TIMES
+ENDOUTPUT
+
+TIME 01/01/1981 	! 366. days
+
+TIME 01/01/1982 	! 731. days
+
+TIME 01/01/1983 	! 1096. days
+
+TIME 01/01/1984 	! 1461. days
+
+TIME 01/01/1985 	! 1827. days
+
+!     Timestep controls
+DT AUTO 45.
+   MIN 1.
+   MAX 365.
+!     The following keywords are translated from the original VIP data but are not yet implemented in Nexus
+!     DPLIM 500.
+!     DSLIM 0.05
+!     DSGLIM 0.075
+!     DZLIM 0.1
+!     IMPSTAB is turned off in Nexus by default.
+!     If it becomes necessary to use IMPSTAB in this model it is suggested you begin with the following parameters:
+!     IMPSTAB ON TARGETCFL 1.5
+
+TIME 01/01/1986 	! 2192. days
+
+TIME 01/01/1987 	! 2557. days
+
+TIME 01/01/1988 	! 2922. days
+
+TIME 01/01/1989 	! 3288. days
+
+!     Frequency at which output is written
+OUTPUT REGIONS TNEXT
+ENDOUTPUT
+
+TIME 01/01/1990 	! 3653. days
+STOP

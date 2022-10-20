@@ -1,0 +1,68 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1606446448445,1,setenvironment,200,OK,setUp Thread Group 1-1,text,true,,1946,0,1,1,null,0,0,0
+1606446448446,0,setenvironment-0,200,OK,setUp Thread Group 1-1,text,true,,1946,0,0,0,null,0,0,0
+1606446448447,0,chooseconnet,200,OK,setUp Thread Group 1-1,text,true,,1576,0,1,1,null,0,0,0
+1606446448447,0,chooseconnet-0,200,OK,setUp Thread Group 1-1,text,true,,1575,0,0,0,null,0,0,0
+1606446448449,1,login  ,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: dssecurity.10.134.193.46,setUp Thread Group 1-1,text,true,,4072,0,1,1,https://dssecurity.10.134.193.46/auth/realms/DecisionSpace_Integration_Server/protocol/openid-connect/token,0,0,1
+1606446448450,0,login  -0,200,OK,setUp Thread Group 1-1,text,true,,1771,0,0,0,null,0,0,0
+1606446449094,1,setting,200,OK,modelmangersurfacenexus 1-1,text,true,,1410,0,1,1,null,0,0,0
+1606446449095,0,setting-0,200,OK,modelmangersurfacenexus 1-1,text,true,,1410,0,0,0,null,0,0,0
+1606446449096,0,connect,200,OK,modelmangersurfacenexus 1-1,text,true,,1589,0,1,1,null,0,0,0
+1606446449096,0,connect-0,200,OK,modelmangersurfacenexus 1-1,text,true,,1588,0,0,0,null,0,0,0
+1606446449099,1,BeanShell Sampler,200,OK,modelmangersurfacenexus 1-1,text,true,,1659,0,1,1,null,0,0,0
+1606446449099,1,BeanShell Sampler-0,200,OK,modelmangersurfacenexus 1-1,text,true,,1659,0,0,0,null,0,0,0
+1606446449101,304,getsurface,200,OK,modelmangersurfacenexus 1-1,text,true,,5070,194,1,1,https://10.134.193.46/modelmanager/model/filterAll?pageNumber=2&pageSize=5,303,0,51
+1606446449405,0,getsurface-0,200,OK,modelmangersurfacenexus 1-1,text,true,,1782,0,0,0,null,0,0,0
+1606446452422,169,getEntityList,200,OK,modelmangersurfacenexus 1-1,text,true,,2263,206,1,1,https://10.134.193.46/modelmanager/model/entities?entityType=Well&filter=1&entityNum=1,169,0,51
+1606446452591,0,getEntityList-0,200,OK,modelmangersurfacenexus 1-1,text,true,,1799,0,0,0,null,0,0,0
+1606446452592,138,getsurface,200,OK,modelmangersurfacenexus 1-1,text,true,,5069,194,1,1,https://10.134.193.46/modelmanager/model/filterAll?pageNumber=2&pageSize=5,138,0,0
+1606446452730,0,getsurface-0,200,OK,modelmangersurfacenexus 1-1,text,true,,1781,0,0,0,null,0,0,0
+1606446452731,376,getentity,200,OK,modelmangersurfacenexus 1-1,text,true,,2252,201,1,1,https://10.134.193.46/modelmanager/model/entities?entityType=Well&entityNum=10000,376,0,0
+1606446453107,0,getentity-0,200,OK,modelmangersurfacenexus 1-1,text,true,,1788,0,0,0,null,0,0,0
+1606446456108,117,addtechinfo,200,OK,modelmangersurfacenexus 1-1,text,true,,2464,435,1,1,https://10.134.193.46/modelmanager/model/tech,117,0,54
+1606446456225,0,addtechinfo-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2000,0,0,0,null,0,0,0
+1606446456226,50,gettechinfolist,200,OK,modelmangersurfacenexus 1-1,text,true,,4459,165,1,1,https://10.134.193.46/modelmanager/model/tech,50,0,0
+1606446456276,0,gettechinfolist-0,200,OK,modelmangersurfacenexus 1-1,text,true,,1867,0,0,0,null,0,0,0
+1606446456277,19,gettechinfolist,200,OK,modelmangersurfacenexus 1-1,text,true,,4619,165,1,1,https://10.134.193.46/modelmanager/model/tech,19,0,0
+1606446456296,0,gettechinfolist-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2027,0,0,0,null,0,0,0
+1606446459311,57,updatetechinfo,200,OK,modelmangersurfacenexus 1-1,text,true,,2672,505,1,1,https://10.134.193.46/modelmanager/model/tech,57,0,44
+1606446459368,0,updatetechinfo-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2233,0,0,0,null,0,0,0
+1606446459369,320,getFileInfoList,200,OK,modelmangersurfacenexus 1-1,text,true,,2854,934,1,1,https://10.134.193.46/modelmanager/model/files,319,0,0
+1606446459688,1,getFileInfoList-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2103,0,0,0,null,0,0,0
+1606446462703,2515,saveModelInfo,200,OK,modelmangersurfacenexus 1-1,text,true,,2982,574,1,1,https://10.134.193.46/modelmanager/model/save,2515,0,49
+1606446465217,0,saveModelInfo-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2518,0,0,0,null,0,0,0
+1606446465218,95,getModelInfoList,200,OK,modelmangersurfacenexus 1-1,text,true,,12030,196,1,1,https://10.134.193.46/modelmanager/model/filterAll?pageNumber=1&pageSize=100,94,0,44
+1606446465313,0,getModelInfoList-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2320,0,0,0,null,0,0,0
+1606446465313,0,getModelInfoList-1,200,OK,modelmangersurfacenexus 1-1,text,true,,2320,0,0,0,null,0,0,0
+1606446465314,3,BeanShell Sampler4e0c0ba7-1325-4a25-ae38-8975ed558753,200,OK,modelmangersurfacenexus 1-1,text,true,,2514,0,1,1,null,0,0,0
+1606446465317,0,BeanShell Sampler4e0c0ba7-1325-4a25-ae38-8975ed558753-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2514,0,0,0,null,0,0,0
+1606446465318,2,BeanShell Sampler4e0c0ba7-1325-4a25-ae38-8975ed558753,200,OK,modelmangersurfacenexus 1-1,text,true,,2843,0,1,1,null,0,0,0
+1606446465320,0,BeanShell Sampler4e0c0ba7-1325-4a25-ae38-8975ed558753-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2843,0,0,0,null,0,0,0
+1606446465321,13,getModelVersionList4e0c0ba7-1325-4a25-ae38-8975ed558753,200,OK,modelmangersurfacenexus 1-1,text,true,,3511,214,1,1,https://10.134.193.46/modelmanager/model/versions?modelId=4e0c0ba7-1325-4a25-ae38-8975ed558753,13,0,0
+1606446465334,0,getModelVersionList4e0c0ba7-1325-4a25-ae38-8975ed558753-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2836,0,0,0,null,0,0,0
+1606446468342,468,downloadModelInfo4e0c0ba7-1325-4a25-ae38-8975ed558753,200,OK,modelmangersurfacenexus 1-1,text,true,,3233,232,1,1,https://10.134.193.46/modelmanager/model/download?modelId=4e0c0ba7-1325-4a25-ae38-8975ed558753&currentVer=testt1,468,0,49
+1606446468810,0,downloadModelInfo4e0c0ba7-1325-4a25-ae38-8975ed558753-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2853,0,0,0,null,0,0,0
+1606446471827,8193,uploadModelInfo,200,OK,modelmangersurfacenexus 1-1,text,true,,3417,855,1,1,https://10.134.193.46/modelmanager/model/upload,8193,0,45
+1606446480020,0,uploadModelInfo-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2976,0,0,0,null,0,0,0
+1606446483030,1435,downloadModelInfo4e0c0ba7-1325-4a25-ae38-8975ed558753,200,OK,modelmangersurfacenexus 1-1,text,true,,3231,229,1,1,https://10.134.193.46/modelmanager/model/download?modelId=4e0c0ba7-1325-4a25-ae38-8975ed558753&currentVer=V16,1435,0,56
+1606446484465,0,downloadModelInfo4e0c0ba7-1325-4a25-ae38-8975ed558753-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2851,0,0,0,null,0,0,0
+1606446484466,7,getModelVersionList4e0c0ba7-1325-4a25-ae38-8975ed558753,200,OK,modelmangersurfacenexus 1-1,text,true,,3734,214,1,1,https://10.134.193.46/modelmanager/model/versions?modelId=4e0c0ba7-1325-4a25-ae38-8975ed558753,7,0,0
+1606446484473,0,getModelVersionList4e0c0ba7-1325-4a25-ae38-8975ed558753-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2836,0,0,0,null,0,0,0
+1606446487483,802,deletetechinfo,200,OK,modelmangersurfacenexus 1-1,text,true,,3227,276,1,1,https://10.134.193.46/modelmanager/model/tech?id=84f1d0b2-b20a-455b-a236-43ade4723c7a,802,0,405
+1606446488285,0,deletetechinfo-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2788,0,0,0,null,0,0,0
+1606446491296,8917,deleteModelInfos,200,OK,modelmangersurfacenexus 1-1,text,true,,3410,365,1,1,https://10.134.193.46/modelmanager/model/delete,8917,0,1172
+1606446500213,0,deleteModelInfos-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2926,0,0,0,null,0,0,0
+1606446500214,323,getPageEntityList,200,OK,modelmangersurfacenexus 1-1,text,true,,3366,219,1,1,https://10.134.193.46/modelmanager/model/pageEntities?entityType=Subsurface&pageNumber=2&pageSize=5,323,0,55
+1606446500537,0,getPageEntityList-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2807,0,0,0,null,0,0,0
+1606446500538,4,existsModelInfo,200,OK,modelmangersurfacenexus 1-1,text,true,,3548,380,1,1,https://10.134.193.46/modelmanager/model/model-exist,4,0,0
+1606446500542,0,existsModelInfo-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2940,0,0,0,null,0,0,0
+1606446500542,5,getMultiVersionList,200,OK,modelmangersurfacenexus 1-1,text,true,,3803,298,1,1,https://10.134.193.46/modelmanager/model/multi-versions,5,0,0
+1606446500547,0,getMultiVersionList-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2863,0,0,0,null,0,0,0
+1606446500548,3,existsVersionInfo,200,OK,modelmangersurfacenexus 1-1,text,true,,3912,596,1,1,https://10.134.193.46/modelmanager/model/version-exist,3,0,0
+1606446500551,0,existsVersionInfo-0,200,OK,modelmangersurfacenexus 1-1,text,true,,3158,0,0,0,null,0,0,0
+1606446500551,2201,restoreModelInfo,200,OK,modelmangersurfacenexus 1-1,text,true,,3697,670,1,1,https://10.134.193.46/modelmanager/model/restore,2201,0,0
+1606446502752,0,restoreModelInfo-0,200,OK,modelmangersurfacenexus 1-1,text,true,,3231,0,0,0,null,0,0,0
+1606446502753,91,getsurface,200,OK,modelmangersurfacenexus 1-1,text,true,,10187,198,1,1,https://10.134.193.46/modelmanager/model/filterAll?pageNumber=1&pageSize=10000,91,0,68
+1606446502844,0,getsurface-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2777,0,0,0,null,0,0,0
+1606446505858,62,deleteModelInfos,200,OK,modelmangersurfacenexus 1-1,text,true,,3409,364,1,1,https://10.134.193.46/modelmanager/model/delete,62,0,47
+1606446505920,0,deleteModelInfos-0,200,OK,modelmangersurfacenexus 1-1,text,true,,2925,0,0,0,null,0,0,0

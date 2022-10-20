@@ -1,0 +1,34 @@
+!-------------------------------
+! LANDMARK GRAPHICS CORPORATION
+!
+! NEXUS EXAMPLE DATA SET
+!
+! 01/16/2008
+!-------------------------------
+
+DESC        SPE COMPARISON PROBLEM #1
+RUN_UNITS ENGLISH
+DEFAULT_UNITS ENGLISH
+DATEFORMAT MM/DD/YYYY
+
+GRID_FILES
+	 STRUCTURED_GRID nexus_data/SPE1-grid.dat
+	 OPTIONS nexus_data/SPE1-prop_options.dat
+
+ROCK_FILES
+	 ROCK Method 1 nexus_data/SPE1-rock_rock.dat
+	 RELPM Method 1 nexus_data/SPE1-rock_relpm.dat
+
+PVT_FILES
+	 PVT Method 1 nexus_data/SPE1-pvt_pvt.dat
+	 SEPARATOR Method 1 nexus_data/SPE1-pvt_separator_dflt.dat
+	 WATER Method 1 nexus_data/SPE1-pvt_water.dat
+
+INITIALIZATION_FILES
+	 EQUIL Method 1 nexus_data/SPE1-init_equil.dat
+
+RECURRENT_FILES
+	 RUNCONTROL nexus_data/SPE1_runcontrol.dat
+	 WELLS Set 1 nexus_data/SPE1_wells.dat
+	 SURFACE Network 1 nexus_data/SPE1_surface.dat
+

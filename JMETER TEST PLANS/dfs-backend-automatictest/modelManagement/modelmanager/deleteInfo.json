@@ -1,0 +1,7 @@
+{
+"modelIds":["${__property(newmodelid)}"],
+"deleteUser":{
+"userId":"admin",
+"userName":"admin"
+}
+}

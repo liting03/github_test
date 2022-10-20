@@ -1,0 +1,9 @@
+{
+  "WELL": {
+    "language": "en",
+    "timezone": "GMT+08:00",
+    "readBack": true,
+    "offset":1,
+    "limit":10000
+  }
+}

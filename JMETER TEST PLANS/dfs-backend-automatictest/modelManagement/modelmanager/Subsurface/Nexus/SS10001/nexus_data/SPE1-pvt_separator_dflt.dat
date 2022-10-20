@@ -1,0 +1,5 @@
+   BOSEP
+MWOIL    212.0      MWGAS  21.97    
+ZOIL    0.010607
+  STAGE    KVOIL      KVGAS      IDL1  FDL1  IDV1 FDV1
+    1   0.53182E-02    94.516       OIL   1.0   GAS   1.0

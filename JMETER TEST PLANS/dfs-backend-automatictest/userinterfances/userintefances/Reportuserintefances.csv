@@ -1,0 +1,43 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1606447402706,1,setenvironment,200,OK,setUp Thread Group 1-1,text,true,,1946,0,1,1,null,0,0,0
+1606447402707,0,setenvironment-0,200,OK,setUp Thread Group 1-1,text,true,,1946,0,0,0,null,0,0,0
+1606447402709,1,chooseconnet,200,OK,setUp Thread Group 1-1,text,true,,1576,0,1,1,null,0,0,0
+1606447402710,0,chooseconnet-0,200,OK,setUp Thread Group 1-1,text,true,,1575,0,0,0,null,0,0,0
+1606447402711,387,login  ,200,OK,setUp Thread Group 1-1,text,true,,7517,3235,1,1,https://10.134.193.46/auth/realms/DecisionSpace_Integration_Server/protocol/openid-connect/token,387,0,57
+1606447403098,0,login  -0,200,OK,setUp Thread Group 1-1,text,true,,1798,0,0,0,null,0,0,0
+1606447403782,1,setenvironment,200,OK,userinterfaces 1-1,text,true,,1608,0,1,1,null,0,0,0
+1606447403783,0,setenvironment-0,200,OK,userinterfaces 1-1,text,true,,1608,0,0,0,null,0,0,0
+1606447403785,0,chooseconnet,200,OK,userinterfaces 1-1,text,true,,1625,0,1,1,null,0,0,0
+1606447403785,0,chooseconnet-0,200,OK,userinterfaces 1-1,text,true,,1624,0,0,0,null,0,0,0
+1606447403787,37,getsolutionmenutree,200,OK,userinterfaces 1-1,text,true,,7634,3039,1,1,https://10.134.193.46/solutionmanager/solution/menuTree,37,0,32
+1606447403824,0,getsolutionmenutree-0,200,OK,userinterfaces 1-1,text,true,,1574,0,0,0,null,0,0,0
+1606447405831,79,creategroupmenu,200,OK,userinterfaces 1-1,text,true,,4360,3347,1,1,https://10.134.193.46/solutionmanager/solution/menu,79,0,30
+1606447405910,0,creategroupmenu-0,200,OK,userinterfaces 1-1,text,true,,1836,0,0,0,null,0,0,0
+1606447408924,43,updateurlmenu,200,OK,userinterfaces 1-1,text,true,,2734,3364,1,1,https://10.134.193.46/solutionmanager/solution/menu,43,0,30
+1606447408967,0,updateurlmenu-0,200,OK,userinterfaces 1-1,text,true,,2293,0,0,0,null,0,0,0
+1606447418971,54,creategroupmenuingroup,200,OK,userinterfaces 1-1,text,true,,5102,3300,1,1,https://10.134.193.46/solutionmanager/solution/menu,54,0,30
+1606447419025,0,creategroupmenuingroup-0,200,OK,userinterfaces 1-1,text,true,,2238,0,0,0,null,0,0,0
+1606447428034,79,updateurlmenu,200,OK,userinterfaces 1-1,text,true,,3135,3384,1,1,https://10.134.193.46/solutionmanager/solution/menu,78,0,39
+1606447428112,1,updateurlmenu-0,200,OK,userinterfaces 1-1,text,true,,2694,0,0,0,null,0,0,0
+1606447437127,1236,createurlmenuingroup,200,OK,userinterfaces 1-1,text,true,,5894,3317,1,1,https://10.134.193.46/solutionmanager/solution/menu,1236,0,60
+1606447438364,0,createurlmenuingroup-0,200,OK,userinterfaces 1-1,text,true,,2634,0,0,0,null,0,0,0
+1606447441378,482,getusermenu,200,OK,userinterfaces 1-1,text,true,,7920,3047,1,1,https://10.134.193.46/solutionmanager/solution/user/menu,482,0,41
+1606447441860,0,getusermenu-0,200,OK,userinterfaces 1-1,text,true,,2760,0,0,0,null,0,0,0
+1606447441861,6,getmenubyid,200,OK,userinterfaces 1-1,text,true,,3652,3079,1,1,https://10.134.193.46/solutionmanager/solution/menu/326b7c4c-6558-4670-9ca9-f5fb02622661,6,0,0
+1606447441867,0,getmenubyid-0,200,OK,userinterfaces 1-1,text,true,,2792,0,0,0,null,0,0,0
+1606447441867,4105,putpolicy,200,OK,userinterfaces 1-1,text,true,,3847,3458,1,1,https://10.134.193.46/solutionmanager/solution/menu,4105,0,0
+1606447445971,0,putpolicy-0,200,OK,userinterfaces 1-1,text,true,,3406,0,0,0,null,0,0,0
+1606447445972,59,getmenubyid,200,OK,userinterfaces 1-1,text,true,,4059,3079,1,1,https://10.134.193.46/solutionmanager/solution/menu/326b7c4c-6558-4670-9ca9-f5fb02622661,59,0,55
+1606447446031,0,getmenubyid-0,200,OK,userinterfaces 1-1,text,true,,3051,0,0,0,null,0,0,0
+1606447446032,322,putpolicydelete,200,OK,userinterfaces 1-1,text,true,,4365,3519,1,1,https://10.134.193.46/solutionmanager/solution/menu,321,0,0
+1606447446353,1,putpolicydelete-0,200,OK,userinterfaces 1-1,text,true,,3924,0,0,0,null,0,0,0
+1606447446354,4,getmenubyid,200,OK,userinterfaces 1-1,text,true,,4464,3079,1,1,https://10.134.193.46/solutionmanager/solution/menu/326b7c4c-6558-4670-9ca9-f5fb02622661,4,0,0
+1606447446358,0,getmenubyid-0,200,OK,userinterfaces 1-1,text,true,,3503,0,0,0,null,0,0,0
+1606447446359,4,childlist,200,OK,userinterfaces 1-1,text,true,,4473,3088,1,1,https://10.134.193.46/solutionmanager/solution/menu/40859544-f143-47a9-8a6b-a2f7de01bdc2/children,4,0,0
+1606447446363,0,childlist-0,200,OK,userinterfaces 1-1,text,true,,3510,0,0,0,null,0,0,0
+1606447449378,177,deletemenu,200,OK,userinterfaces 1-1,text,true,,3946,3165,1,1,https://10.134.193.46/solutionmanager/solution/menu/326b7c4c-6558-4670-9ca9-f5fb02622661,177,0,47
+1606447449555,0,deletemenu-0,200,OK,userinterfaces 1-1,text,true,,3505,0,0,0,null,0,0,0
+1606447458565,40,deletemenu,200,OK,userinterfaces 1-1,text,true,,3946,3165,1,1,https://10.134.193.46/solutionmanager/solution/menu/40859544-f143-47a9-8a6b-a2f7de01bdc2,40,0,30
+1606447458605,0,deletemenu-0,200,OK,userinterfaces 1-1,text,true,,3505,0,0,0,null,0,0,0
+1606447467611,59,deletemenu,200,OK,userinterfaces 1-1,text,true,,3946,3165,1,1,https://10.134.193.46/solutionmanager/solution/menu/058f92b7-ec80-48c1-bfa7-dbab5ac61fad,59,0,30
+1606447467670,0,deletemenu-0,200,OK,userinterfaces 1-1,text,true,,3505,0,0,0,null,0,0,0

@@ -1,0 +1,6 @@
+
+!     Standard pressure
+PSTD 14.7 	! PSIA
+
+!     Standard temperature
+TSTD 60 	! F

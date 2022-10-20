@@ -1,0 +1,46 @@
+!     Fluid model for network
+BLACKOIL
+
+!     Network default temperature
+NETTEMP 100.
+
+!     Connection defaults
+CONDEFAULTS
+ CONTYPE TYPE METHOD
+WELLBORE PIPE LUMPED
+ENDCONDEFAULTS
+
+!     Shift bottom-hole node if connection length is less than depth change
+ALLOW_BHMOVE
+
+!     Control of constraints on well connections
+WELLCONTROL WELLHEAD
+
+!     Hydraulics options
+HYDRAULICS FLOW_UNSTABLE
+
+!     Constraints will be added
+DONTCLEAR
+
+!     Stream definition
+STREAMS
+NAME    GAS    OIL
+GAS1 0.9949 0.0051
+ENDSTREAMS
+
+!     Gas injector mobility computation method
+!     Water injector mobility computation method
+INJMOB ENDPT
+
+!     Wells definition
+WELLS
+NAME   STREAM NUMBER DATUM CROSSFLOW CROSS_SHUT
+ "1"      GAS      1  8400       OFF        OFF
+ "2" PRODUCER      2  8400       OFF        OFF
+ENDWELLS
+
+!     Wells related constraints
+CONSTRAINTS
+"1" PMAX 10000 QGSMAX 100000
+"2" PMIN 1000 QOSMIN 1000 GORMAX 20.000 QOSMAX 20000
+ENDCONSTRAINTS

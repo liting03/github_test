@@ -1,0 +1,1 @@
+[{"compareType":"Like","fieldName":"solutionName","value":"Test"},{"compareType":"Equal","fieldName":"createUser","value":"current user"}]

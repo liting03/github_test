@@ -1,0 +1,6 @@
+{
+"currentVer":"V15",
+"modelType":"Well",
+"techType":"${techType}",
+"techExts": "${techExts}",
+}
