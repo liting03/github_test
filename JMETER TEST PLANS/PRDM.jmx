@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2.1">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -26,7 +26,7 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </SetupThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET_TOKEN" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET_TOKEN" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="client_id" elementType="HTTPArgument">
@@ -45,21 +45,21 @@
               </elementProp>
               <elementProp name="username" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">admin</stringProp>
+                <stringProp name="Argument.value">qa00</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">username</stringProp>
               </elementProp>
               <elementProp name="password" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">admin</stringProp>
+                <stringProp name="Argument.value">000</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">password</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">dssecurity.distplat3.landmarksoftware.io</stringProp>
+          <stringProp name="HTTPSampler.domain">dssecurity.tiger.dazlmkengdev02.ienergycloud.solutions</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -150,7 +150,7 @@
         </CSVDataSet>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Common APIs" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Master Data (new/search/updae/filter/delete)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -166,29 +166,34 @@
       <hashTree>
         <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments">
-            <elementProp name="frontendip" elementType="Argument">
-              <stringProp name="Argument.name">frontendip</stringProp>
-              <stringProp name="Argument.value">10.134.192.116</stringProp>
+            <elementProp name="URL" elementType="Argument">
+              <stringProp name="Argument.name">URL</stringProp>
+              <stringProp name="Argument.value">qa-dspdmapp.tiger.dazlmkengdev02.ienergycloud.solutions</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
-            <elementProp name="backendip" elementType="Argument">
-              <stringProp name="Argument.name">backendip</stringProp>
-              <stringProp name="Argument.value">10.134.192.116</stringProp>
+            <elementProp name="qadspdmservice" elementType="Argument">
+              <stringProp name="Argument.name">qadspdmservice</stringProp>
+              <stringProp name="Argument.value">tiger.dazlmkengdev02.ienergycloud.solutions</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="protocal" elementType="Argument">
               <stringProp name="Argument.name">protocal</stringProp>
-              <stringProp name="Argument.value">http</stringProp>
+              <stringProp name="Argument.value">https</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="frontendport" elementType="Argument">
               <stringProp name="Argument.name">frontendport</stringProp>
-              <stringProp name="Argument.value">7070</stringProp>
+              <stringProp name="Argument.value"></stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="backendport" elementType="Argument">
               <stringProp name="Argument.name">backendport</stringProp>
-              <stringProp name="Argument.value">9090</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="devdspdmservice" elementType="Argument">
+              <stringProp name="Argument.name">devdspdmservice</stringProp>
+              <stringProp name="Argument.value">tiger.dazlmkengdev02.ienergycloud.solutions/services/dev-dspdmservice</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
@@ -211,11 +216,11 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${frontendip}</stringProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
           <stringProp name="HTTPSampler.port">${frontendport}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/applications/DspdmApp/collections/serviceRegistryConfigurations/configurations/serviceRegistryConfig1</stringProp>
+          <stringProp name="HTTPSampler.path">/applications/DspdmApp_QA/collections/serviceRegistryConfigurations/configurations/serviceRegistryConfig1</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -228,7 +233,7 @@
         <hashTree>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="1266049177">&quot;UserPrivilegeApiUrl&quot;:&quot;https://distplat3.landmarksoftware.io/services/privilegeservice/msp/&quot;</stringProp>
+              <stringProp name="-632127196">&quot;UserPrivilegeApiUrl&quot;:&quot;https://tiger.dazlmkengdev02.ienergycloud.solutions/services/qa-privilegeservice/msp/&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -241,11 +246,11 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${frontendip}</stringProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
           <stringProp name="HTTPSampler.port">${frontendport}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/applications/DspdmApp/collections/i18n/configurations/en</stringProp>
+          <stringProp name="HTTPSampler.path">/applications/DspdmApp/collections/i18n/configurations/en-US</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -267,305 +272,7 @@
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_common" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;boName&quot;: &quot;WELL&quot;,&#xd;
-    &quot;pagination&quot;: {&#xd;
-        &quot;recordsPerPage&quot;: 5,&#xd;
-        &quot;pages&quot;: [&#xd;
-            1&#xd;
-        ]&#xd;
-    },&#xd;
-    &quot;readRecordsCount&quot;: &quot;false&quot;,&#xd;
-    &quot;orderBy&quot;: [&#xd;
-        {&#xd;
-            &quot;boAttrName&quot;: &quot;UWI&quot;,&#xd;
-            &quot;order&quot;: &quot;ASC&quot;&#xd;
-        }&#xd;
-    ],&#xd;
-    &quot;criteriaFilters&quot;: [&#xd;
-        {&#xd;
-            &quot;boAttrName&quot;: &quot;UWI&quot;,&#xd;
-            &quot;operator&quot;: &quot;LIKE&quot;,&#xd;
-            &quot;values&quot;: [&#xd;
-                &quot;%TW%&quot;&#xd;
-            ]&#xd;
-        }&#xd;
-    ],&#xd;
-    &quot;selectList&quot;: [&#xd;
-        &quot;UWI&quot;,&#xd;
-        &quot;WELL_NAME&quot;&#xd;
-    ],&#xd;
-    &quot;readMetadata&quot;: &quot;false&quot;,&#xd;
-    &quot;readMetadataConstraints&quot;: &quot;false&quot;,&#xd;
-    &quot;readReferenceData&quot;: &quot;false&quot;,&#xd;
-    &quot;language&quot;: &quot;en&quot;,&#xd;
-    &quot;timezone&quot;: &quot;GMT+08:00&quot;,&#xd;
-    &quot;readBack&quot;: true&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${backendip}</stringProp>
-          <stringProp name="HTTPSampler.port">${frontendport}</stringProp>
-          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/msp/secure/common</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-173845891">   &quot;statusLabel&quot; : &quot;Success&quot;</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_wellcount" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${backendip}</stringProp>
-          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
-          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/msp/secure/common//count/WELL </stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-560047380">   &quot;statusCode&quot; : 1</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <CompareAssertion guiclass="TestBeanGUI" testclass="CompareAssertion" testname="Compare Assertion" enabled="true">
-            <boolProp name="compareContent">true</boolProp>
-            <longProp name="compareTime">-1</longProp>
-            <collectionProp name="stringsToSkip">
-              <elementProp name="" elementType="SubstitutionElement">
-                <stringProp name="regex"></stringProp>
-              </elementProp>
-            </collectionProp>
-          </CompareAssertion>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_parse" enabled="true">
-          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
-            <collectionProp name="HTTPFileArgs.files">
-              <elementProp name="D:\JMETER TEST PLANS\Import files\WELLData.xlsx" elementType="HTTPFileArg">
-                <stringProp name="File.path">D:\JMETER TEST PLANS\Import files\WELLData.xlsx</stringProp>
-                <stringProp name="File.paramname">uploadedFile</stringProp>
-                <stringProp name="File.mimetype">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</stringProp>
-              </elementProp>
-              <elementProp name="D:\JMETER TEST PLANS\Import files\params.json" elementType="HTTPFileArg">
-                <stringProp name="File.path">D:\JMETER TEST PLANS\Import files\params.json</stringProp>
-                <stringProp name="File.paramname">params</stringProp>
-                <stringProp name="File.mimetype">application/json</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${backendip}</stringProp>
-          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
-          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-          <stringProp name="HTTPSampler.path">/msp/secure/parse</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.implementation">Java</stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_import" enabled="true">
-          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
-            <collectionProp name="HTTPFileArgs.files">
-              <elementProp name="D:\JMETER TEST PLANS\Import files\WELLData.xlsx" elementType="HTTPFileArg">
-                <stringProp name="File.path">D:\JMETER TEST PLANS\Import files\WELLData.xlsx</stringProp>
-                <stringProp name="File.paramname">uploadedFile</stringProp>
-                <stringProp name="File.mimetype">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</stringProp>
-              </elementProp>
-              <elementProp name="D:\JMETER TEST PLANS\Import files\params.json" elementType="HTTPFileArg">
-                <stringProp name="File.path">D:\JMETER TEST PLANS\Import files\params.json</stringProp>
-                <stringProp name="File.paramname">params</stringProp>
-                <stringProp name="File.mimetype">application/json</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${backendip}</stringProp>
-          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
-          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-          <stringProp name="HTTPSampler.path">/msp/secure/import</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.implementation">Java</stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_common" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${backendip}</stringProp>
-          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
-          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-          <stringProp name="HTTPSampler.path">/msp/secure/common</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.implementation">Java</stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_export" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;boName&quot;: &quot;WELL&quot;,&#xd;
-    &quot;pagination&quot;: {&#xd;
-        &quot;recordsPerPage&quot;: 5,&#xd;
-        &quot;pages&quot;: [&#xd;
-            1&#xd;
-        ]&#xd;
-    },&#xd;
-    &quot;readRecordsCount&quot;: &quot;false&quot;,&#xd;
-    &quot;orderBy&quot;: [&#xd;
-        {&#xd;
-            &quot;boAttrName&quot;: &quot;UWI&quot;,&#xd;
-            &quot;order&quot;: &quot;ASC&quot;&#xd;
-        }&#xd;
-    ],&#xd;
-    &quot;criteriaFilters&quot;: [&#xd;
-        {&#xd;
-            &quot;boAttrName&quot;: &quot;UWI&quot;,&#xd;
-            &quot;operator&quot;: &quot;LIKE&quot;,&#xd;
-            &quot;values&quot;: [&#xd;
-                &quot;%TW%&quot;&#xd;
-            ]&#xd;
-        }&#xd;
-    ],&#xd;
-    &quot;selectList&quot;: [&#xd;
-        &quot;UWI&quot;,&#xd;
-        &quot;WELL_NAME&quot;&#xd;
-    ],&#xd;
-    &quot;readMetadata&quot;: &quot;false&quot;,&#xd;
-    &quot;readMetadataConstraints&quot;: &quot;false&quot;,&#xd;
-    &quot;readReferenceData&quot;: &quot;false&quot;,&#xd;
-    &quot;language&quot;: &quot;en&quot;,&#xd;
-    &quot;timezone&quot;: &quot;GMT+08:00&quot;&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${backendip}</stringProp>
-          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
-          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/msp/secure/export</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="true">
-            <stringProp name="FileSaver.filename">D:\JMETER TEST PLANS\Export files\export.xlsx</stringProp>
-            <boolProp name="FileSaver.errorsonly">false</boolProp>
-            <boolProp name="FileSaver.successonly">false</boolProp>
-            <boolProp name="FileSaver.skipsuffix">false</boolProp>
-            <boolProp name="FileSaver.skipautonumber">false</boolProp>
-            <boolProp name="FileSaver.ignoreTC">false</boolProp>
-          </ResultSaver>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_save" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_save" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -680,11 +387,11 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${backendip}</stringProp>
+          <stringProp name="HTTPSampler.domain">${qa-dspdm-service}</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/services/pdmbackend/dspdm/rest/secure/save</stringProp>
+          <stringProp name="HTTPSampler.path">/services/qa-dspdmservice/msp/save</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -717,7 +424,448 @@
           </JDBCPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_delete" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_update" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;WELL&quot;: {&#xd;
+        &quot;readBack&quot;: false,&#xd;
+        &quot;data&quot;: [&#xd;
+            {&#xd;
+                &quot;WELL_ID&quot;: null,&#xd;
+                &quot;UWI&quot;: &quot;UWI01&quot;,&#xd;
+                &quot;UWIERROR_COUNT&quot;: 0,&#xd;
+                &quot;ERROR_COUNT&quot;: 0,&#xd;
+                &quot;UWIrequired&quot;: false,&#xd;
+                &quot;UWIERROR_MSG&quot;: &quot;&quot;,&#xd;
+                &quot;UWIERROR_MSG_PARAM&quot;: &quot;&quot;,&#xd;
+                &quot;UWIINVALID&quot;: false,&#xd;
+                &quot;UWIUNIQUE_COLUMNS&quot;: [&#xd;
+                    &quot;UWI&quot;&#xd;
+                ],&#xd;
+                &quot;WELL_NAME&quot;: &quot;WELLNAME01&quot;,&#xd;
+                &quot;WELL_NAMEERROR_COUNT&quot;: 0,&#xd;
+                &quot;WELL_NAMEINVALID&quot;: false,&#xd;
+                &quot;WELL_ALIAS_NAME&quot;: null,&#xd;
+                &quot;WELL_ALIAS_NAMEERROR_COUNT&quot;: 0,&#xd;
+                &quot;WELL_ALIAS_NAMEINVALID&quot;: false,&#xd;
+                &quot;AREA_ID&quot;: null,&#xd;
+                &quot;AREA_NAME&quot;: &quot;Alaska&quot;,&#xd;
+                &quot;FIELD_ID&quot;: null,&#xd;
+                &quot;FIELD_NAME&quot;: &quot;HAL-Alaska Field&quot;,&#xd;
+                &quot;POOL_ID&quot;: null,&#xd;
+                &quot;POOL_NAME&quot;: null,&#xd;
+                &quot;NETWORK_NODE_ID&quot;: null,&#xd;
+                &quot;PLATFORM_ID&quot;: null,&#xd;
+                &quot;PLATFORM_NAME&quot;: null,&#xd;
+                &quot;LEASE_NAME&quot;: null,&#xd;
+                &quot;LEASE_NAMEERROR_COUNT&quot;: 0,&#xd;
+                &quot;LEASE_NAMEINVALID&quot;: false,&#xd;
+                &quot;LEASE_NUM&quot;: null,&#xd;
+                &quot;LEASE_NUMERROR_COUNT&quot;: 0,&#xd;
+                &quot;LEASE_NUMINVALID&quot;: false,&#xd;
+                &quot;OFFSHORE_IND&quot;: true,&#xd;
+                &quot;IS_ACTIVE&quot;: true,&#xd;
+                &quot;WELL_OWNER&quot;: &quot;TING&quot;,&#xd;
+                &quot;WELL_OWNERERROR_COUNT&quot;: 0,&#xd;
+                &quot;WELL_OWNERINVALID&quot;: false,&#xd;
+                &quot;SPUD_DATE&quot;: &quot;2020-03-19T03:46:26.000Z&quot;,&#xd;
+                &quot;SPUD_DATEERROR_COUNT&quot;: 0,&#xd;
+                &quot;SPUD_DATEINVALID&quot;: false,&#xd;
+                &quot;SPUD_DATE_TZ&quot;: &quot;UTC+8:00&quot;,&#xd;
+                &quot;R_TIMEZONE_ID&quot;: null,&#xd;
+                &quot;COMPLETION_DATE&quot;: &quot;2020-03-18T16:00:00.000Z&quot;,&#xd;
+                &quot;COMPLETION_DATEERROR_COUNT&quot;: 0,&#xd;
+                &quot;COMPLETION_DATEINVALID&quot;: false,&#xd;
+                &quot;PRODUCTION_START_DATE&quot;: &quot;2010-03-18T16:00:00.000Z&quot;,&#xd;
+                &quot;PRODUCTION_START_DATEERROR_COUNT&quot;: 0,&#xd;
+                &quot;PRODUCTION_START_DATEINVALID&quot;: false,&#xd;
+                &quot;X_COORDINATE&quot;: -100,&#xd;
+                &quot;X_COORDINATE_OUOM&quot;: null,&#xd;
+                &quot;X_COORDINATE_OUOMERROR_COUNT&quot;: 0,&#xd;
+                &quot;X_COORDINATE_OUOMINVALID&quot;: false,&#xd;
+                &quot;Y_COORDINATE&quot;: 30,&#xd;
+                &quot;Y_COORDINATE_OUOM&quot;: null,&#xd;
+                &quot;Y_COORDINATE_OUOMERROR_COUNT&quot;: 0,&#xd;
+                &quot;Y_COORDINATE_OUOMINVALID&quot;: false,&#xd;
+                &quot;CRS_ID&quot;: null,&#xd;
+                &quot;CRS_NAME&quot;: &quot;WGS 84&quot;,&#xd;
+                &quot;PRODUCTION_METHOD_ID&quot;: null,&#xd;
+                &quot;PRODUCTION_METHOD&quot;: null,&#xd;
+                &quot;WELL_TYPE_ID&quot;: null,&#xd;
+                &quot;WELL_TYPE&quot;: &quot;Disposal&quot;,&#xd;
+                &quot;CURRENT_CLASS_ID&quot;: null,&#xd;
+                &quot;WELL_CLASS&quot;: null,&#xd;
+                &quot;CURRENT_STATUS_ID&quot;: null,&#xd;
+                &quot;R_WELL_STATUS_NAME&quot;: &quot;Abandoned&quot;,&#xd;
+                &quot;CURRENT_STATUS_DATE&quot;: null,&#xd;
+                &quot;CURRENT_STATUS_DATEERROR_COUNT&quot;: 0,&#xd;
+                &quot;CURRENT_STATUS_DATEINVALID&quot;: false,&#xd;
+                &quot;DEEPEST_DEPTH&quot;: 8000,&#xd;
+                &quot;DEEPEST_DEPTH_OUOM&quot;: &quot;FT&quot;,&#xd;
+                &quot;DEEPEST_DEPTH_OUOMERROR_COUNT&quot;: 0,&#xd;
+                &quot;DEEPEST_DEPTH_OUOMINVALID&quot;: false,&#xd;
+                &quot;MAX_TVD&quot;: null,&#xd;
+                &quot;MAX_TVD_OUOM&quot;: null,&#xd;
+                &quot;MAX_TVD_OUOMERROR_COUNT&quot;: 0,&#xd;
+                &quot;MAX_TVD_OUOMINVALID&quot;: false,&#xd;
+                &quot;DEPTH_DATUM_ID&quot;: null,&#xd;
+                &quot;DEPTH_DATUM&quot;: null,&#xd;
+                &quot;DEPTH_DATUM_ELEV&quot;: null,&#xd;
+                &quot;DEPTH_DATUM_ELEV_OUOM&quot;: null,&#xd;
+                &quot;DEPTH_DATUM_ELEV_OUOMERROR_COUNT&quot;: 0,&#xd;
+                &quot;DEPTH_DATUM_ELEV_OUOMINVALID&quot;: false,&#xd;
+                &quot;GROUND_ELEV&quot;: null,&#xd;
+                &quot;GROUND_ELEV_OUOM&quot;: null,&#xd;
+                &quot;GROUND_ELEV_OUOMERROR_COUNT&quot;: 0,&#xd;
+                &quot;GROUND_ELEV_OUOMINVALID&quot;: false,&#xd;
+                &quot;PLOT_SYMBOL&quot;: null,&#xd;
+                &quot;PLOT_SYMBOLERROR_COUNT&quot;: 0,&#xd;
+                &quot;PLOT_SYMBOLINVALID&quot;: false,&#xd;
+                &quot;ROW_CHANGED_BY&quot;: null,&#xd;
+                &quot;ROW_CHANGED_DATE&quot;: null,&#xd;
+                &quot;ROW_CREATED_BY&quot;: null,&#xd;
+                &quot;ROW_CREATED_DATE&quot;: null&#xd;
+            }&#xd;
+        ],&#xd;
+        &quot;language&quot;: &quot;en&quot;,&#xd;
+        &quot;timezone&quot;: &quot;GMT+08:00&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${qa-dspdm-service}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/services/qa-dspdmservice/msp/save</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings"/>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="JDBC PostProcessor" enabled="true">
+            <stringProp name="dataSource"></stringProp>
+            <stringProp name="query"></stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="queryType">Select Statement</stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultSetMaxRows"></stringProp>
+            <stringProp name="resultVariable"></stringProp>
+            <stringProp name="variableNames"></stringProp>
+          </JDBCPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_common" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;boName&quot;: &quot;WELL&quot;,&#xd;
+    &quot;language&quot;: &quot;en&quot;,&#xd;
+    &quot;timezone&quot;: &quot;GMT+08:00&quot;,&#xd;
+    &quot;criteriaFilters&quot;: [&#xd;
+        {&#xd;
+            &quot;boAttrName&quot;: &quot;WELL_NAME&quot;,&#xd;
+            &quot;operator&quot;: &quot;LIKE&quot;,&#xd;
+            &quot;values&quot;: [&#xd;
+           &quot;TW&quot;&#xd;
+            ]&#xd;
+        }&#xd;
+    ]&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${devdspdmservice}</stringProp>
+          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/services/qa-dspdmservice/msp/common</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-173845891">   &quot;statusLabel&quot; : &quot;Success&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_search" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;boName&quot;: &quot;WELL&quot;,&#xd;
+    &quot;language&quot;: &quot;en&quot;,&#xd;
+    &quot;timezone&quot;: &quot;GMT+08:00&quot;,&#xd;
+    &quot;criteriaFilters&quot;: [&#xd;
+        {&#xd;
+            &quot;boAttrName&quot;: &quot;WELL_NAME&quot;,&#xd;
+            &quot;operator&quot;: &quot;LIKE&quot;,&#xd;
+            &quot;values&quot;: [&#xd;
+           &quot;TW&quot;&#xd;
+            ]&#xd;
+        }&#xd;
+    ]&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${devdspdmservice}</stringProp>
+          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/services/qa-dspdmservice/msp/common</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-173845891">   &quot;statusLabel&quot; : &quot;Success&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_parse" enabled="false">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="D:\JMETER TEST PLANS\Import files\WELLData.xlsx" elementType="HTTPFileArg">
+                <stringProp name="File.path">D:\JMETER TEST PLANS\Import files\WELLData.xlsx</stringProp>
+                <stringProp name="File.paramname">uploadedFile</stringProp>
+                <stringProp name="File.mimetype">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</stringProp>
+              </elementProp>
+              <elementProp name="D:\JMETER TEST PLANS\Import files\params.json" elementType="HTTPFileArg">
+                <stringProp name="File.path">D:\JMETER TEST PLANS\Import files\params.json</stringProp>
+                <stringProp name="File.paramname">params</stringProp>
+                <stringProp name="File.mimetype">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${qa-dspdm-service}</stringProp>
+          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/services/qa-dspdmservice/msp/parse</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">Java</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">multipart/form-data</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_import" enabled="false">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="D:\JMETER TEST PLANS\Import files\WELLData.xlsx" elementType="HTTPFileArg">
+                <stringProp name="File.path">D:\JMETER TEST PLANS\Import files\WELLData.xlsx</stringProp>
+                <stringProp name="File.paramname">uploadedFile</stringProp>
+                <stringProp name="File.mimetype">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</stringProp>
+              </elementProp>
+              <elementProp name="D:\JMETER TEST PLANS\Import files\params.json" elementType="HTTPFileArg">
+                <stringProp name="File.path">D:\JMETER TEST PLANS\Import files\params.json</stringProp>
+                <stringProp name="File.paramname">params</stringProp>
+                <stringProp name="File.mimetype">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${qa-dspdm-service}</stringProp>
+          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/services/qa-dspdmservice/msp/import</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">Java</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">multipart/form-data</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_count" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${qa-dspdm-service}</stringProp>
+          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/services/qa-dspdmservice/msp/count/WELL</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">Java</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">multipart/form-data</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_export" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;boName&quot;: &quot;WELL&quot;,&#xd;
+    &quot;pagination&quot;: {&#xd;
+        &quot;recordsPerPage&quot;: 5,&#xd;
+        &quot;pages&quot;: [&#xd;
+            1&#xd;
+        ]&#xd;
+    },&#xd;
+    &quot;readRecordsCount&quot;: &quot;false&quot;,&#xd;
+    &quot;orderBy&quot;: [&#xd;
+        {&#xd;
+            &quot;boAttrName&quot;: &quot;UWI&quot;,&#xd;
+            &quot;order&quot;: &quot;ASC&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;criteriaFilters&quot;: [&#xd;
+        {&#xd;
+            &quot;boAttrName&quot;: &quot;UWI&quot;,&#xd;
+            &quot;operator&quot;: &quot;LIKE&quot;,&#xd;
+            &quot;values&quot;: [&#xd;
+                &quot;%TW%&quot;&#xd;
+            ]&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;selectList&quot;: [&#xd;
+        &quot;UWI&quot;,&#xd;
+        &quot;WELL_NAME&quot;&#xd;
+    ],&#xd;
+    &quot;readMetadata&quot;: &quot;false&quot;,&#xd;
+    &quot;readMetadataConstraints&quot;: &quot;false&quot;,&#xd;
+    &quot;readReferenceData&quot;: &quot;false&quot;,&#xd;
+    &quot;language&quot;: &quot;en&quot;,&#xd;
+    &quot;timezone&quot;: &quot;GMT+08:00&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${qa-dspdm-service}</stringProp>
+          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/services/qa-dspdmservice/msp/export</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="true">
+            <stringProp name="FileSaver.filename">D:\JMETER TEST PLANS\Export files\export.xlsx</stringProp>
+            <boolProp name="FileSaver.errorsonly">false</boolProp>
+            <boolProp name="FileSaver.successonly">false</boolProp>
+            <boolProp name="FileSaver.skipsuffix">false</boolProp>
+            <boolProp name="FileSaver.skipautonumber">false</boolProp>
+            <boolProp name="FileSaver.ignoreTC">false</boolProp>
+          </ResultSaver>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_delete" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -739,11 +887,11 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${backendip}</stringProp>
+          <stringProp name="HTTPSampler.domain">${qa-dspdm-service}</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/services/pdmbackend/dspdm/rest/secure/delete</stringProp>
+          <stringProp name="HTTPSampler.path">/services/qa-dspdmservice/msp/delete</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -800,8 +948,48 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backend_wellcount" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${qadspdmservice}</stringProp>
+          <stringProp name="HTTPSampler.port">${backendport}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocal}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/services/qa-dspdmservice/msp/common/count/WELL</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-560047380">   &quot;statusCode&quot; : 1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <CompareAssertion guiclass="TestBeanGUI" testclass="CompareAssertion" testname="Compare Assertion" enabled="true">
+            <boolProp name="compareContent">true</boolProp>
+            <longProp name="compareTime">-1</longProp>
+            <collectionProp name="stringsToSkip">
+              <elementProp name="" elementType="SubstitutionElement">
+                <stringProp name="regex"></stringProp>
+              </elementProp>
+            </collectionProp>
+          </CompareAssertion>
+          <hashTree/>
+        </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Privileges" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Privileges" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
